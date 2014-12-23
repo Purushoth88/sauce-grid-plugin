@@ -200,7 +200,7 @@ public class SauceOnDemandAdminServlet extends AbstractSauceOnDemandServlet {
         builder.append("<fieldset>");
         builder.append("<legend class='proxyname' accesskey=c>Supported Browsers (WebDriver)</legend>");
         builder.append("<select name='").append(WEB_DRIVER_CAPABILITIES)
-                .append("' multiple='multiple'>");
+                .append("' multiple='multiple' size=10 style='width: 300px'>");
         for (SauceOnDemandCapabilities cap : webDriverBrowsers.getAllBrowsers()) {
 
             builder.append("<option value='").append(cap.getMD5()).append('\'');
@@ -221,7 +221,7 @@ public class SauceOnDemandAdminServlet extends AbstractSauceOnDemandServlet {
         builder.append("<fieldset>");
         builder.append("<legend class='proxyname' accesskey=c>Supported Browsers (Selenium RC)</legend>");
         builder.append("<select name='").append(SELENIUM_CAPABILITIES)
-                .append("' multiple='multiple'>");
+                .append("' multiple='multiple' size=10 style='width: 300px'>");
         for (SauceOnDemandCapabilities cap : seleniumBrowsers.getAllBrowsers()) {
 
             builder.append("<option value='").append(cap.getMD5()).append("'>");

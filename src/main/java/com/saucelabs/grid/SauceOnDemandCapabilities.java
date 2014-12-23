@@ -83,7 +83,7 @@ public class SauceOnDemandCapabilities implements Comparable {
         String md5 = computeMD5(normalized);
         copy(API_NAME);
         set("browserName", (String) map.get(API_NAME));
-        set("version",  (String) map.get(SHORT_VERSION));
+        set("version", (String) map.get(SHORT_VERSION));
 
         return md5;
     }
@@ -180,13 +180,23 @@ public class SauceOnDemandCapabilities implements Comparable {
             }
             DecimalFormat d = new DecimalFormat("0.0");
             try {
-                Number shortVersion = d.parse(getShortVersion());
-                Number otherShortVersion = d.parse(other.getShortVersion());
-                return new Integer(shortVersion.intValue()).compareTo(new Integer(otherShortVersion.intValue()));
+                String version = getShortVersion();
+                String otherShortVersion1 = other.getShortVersion();
+                if (isNumeric(version) && isNumeric(otherShortVersion1)) {
+                    Number shortVersion = d.parse(version);
+                    Number otherShortVersion = d.parse(otherShortVersion1);
+                    return new Integer(shortVersion.intValue()).compareTo(new Integer(otherShortVersion.intValue()));
+                } else {
+                    return version.compareTo(otherShortVersion1);
+                }
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         }
         return 0;
+    }
+
+    private static boolean isNumeric(String str) {
+        return str.matches("\\d+(\\.\\d+)?");
     }
 }
