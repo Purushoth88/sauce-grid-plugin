@@ -412,6 +412,9 @@ public class SauceOnDemandRemoteProxy extends DefaultRemoteProxy {
                     JSONObject json = new JSONObject(body);
                     //add username/accessKey
                     JSONObject desiredCapabilities = json.getJSONObject("desiredCapabilities");
+                    if (desiredCapabilities.has("sauce:platform")) {
+                        desiredCapabilities.put("platform", desiredCapabilities.getString("sauce:platform"));
+                    }
                     desiredCapabilities.put("username", this.userName);
                     desiredCapabilities.put("accessKey", this.accessKey);
                     //convert from JSON to String

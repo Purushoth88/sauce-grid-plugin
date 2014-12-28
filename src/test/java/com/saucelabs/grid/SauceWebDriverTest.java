@@ -22,9 +22,10 @@ public class SauceWebDriverTest {
     @BeforeMethod
     public void setUp() throws Exception {
 
-        DesiredCapabilities capabillities = DesiredCapabilities.firefox();
-        capabillities.setCapability("version", "24");
-        capabillities.setCapability("platform", Platform.WIN8);
+        DesiredCapabilities capabillities = DesiredCapabilities.safari();
+        capabillities.setCapability("version", "7");
+        capabillities.setCapability("sauce:platform", "OS X 10.9");
+        capabillities.setCapability("platform", Platform.MAC);
         capabillities.setCapability("name", "Amazon Grid Test");
         this.driver = new RemoteWebDriver(
                 new URL("http://localhost:4444/wd/hub"),
