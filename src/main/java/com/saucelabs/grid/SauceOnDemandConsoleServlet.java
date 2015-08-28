@@ -107,7 +107,7 @@ public class SauceOnDemandConsoleServlet extends AbstractSauceOnDemandServlet {
     }
 
     private String key(String key) {
-        return "<abbr title='" + GridDocHelper.getGridParam(key) + "'>" + key + " : </abbr>";
+        return "<abbr title='" + GridDocHelper.getHubParam(key) + "'>" + key + " : </abbr>";
     }
 
     private String prettyHtmlPrint(GridHubConfiguration config) {
