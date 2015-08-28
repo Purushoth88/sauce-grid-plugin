@@ -24,7 +24,7 @@ import java.util.List;
  *
  * TODO use the Sauce REST Java API
  *
- * @author François Reynaud - Initial version of plugin
+ * @author Fran√ßois Reynaud - Initial version of plugin
  * @author Ross Rowe - Additional functionality
  */
 public class SauceOnDemandServiceImpl implements SauceOnDemandService {

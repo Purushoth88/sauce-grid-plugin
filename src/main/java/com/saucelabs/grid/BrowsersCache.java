@@ -7,7 +7,7 @@ import java.util.*;
  *
  * TODO handle expiring of the cache
  *
- * @author François Reynaud - Initial version of plugin
+ * @author Fran√ßois Reynaud - Initial version of plugin
  * @author Ross Rowe - Additional functionality
  */
 public class BrowsersCache {
